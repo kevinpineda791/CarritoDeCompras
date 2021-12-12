@@ -52,7 +52,7 @@ class CarritoController(
         return checkoutRepository.execute(UUID.fromString(carritoId))
             .takeIf { it!=0.0 }
             ?.let { ResponseEntity.ok(listOf(it.toString(), Estado.COMPLETADO.toString())) }
-            ?:throw ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se ha podido completar la compra por el id ")
+            ?:throw ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "No se ha podido completar la compra por el id $carritoId")
     }
 
     @DeleteMapping("/{carritoId}")

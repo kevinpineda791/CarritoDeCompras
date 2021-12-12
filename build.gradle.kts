@@ -23,6 +23,7 @@ repositories {
 }
 
 dependencies {
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -31,13 +32,16 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+	// https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock
+	//testImplementation("com.github.tomakehurst:wiremock:2.27.2")
+
 	implementation("com.h2database:h2:1.4.200")
 
 //	testImplementation("com.h2database:h2:1.4.200")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -20,7 +20,7 @@ class CheckoutUCRepository(
 
         val valorTotal = carritoDeCompra
             .takeIf { it!=null }
-            ?.let { it -> it.map { it.precio } }
+            ?.let { it -> it.map { it.precio*it.cantidad } }
             ?.let { it -> it.sumOf { it } }
             ?:0.0
 
